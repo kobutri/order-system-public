@@ -1,0 +1,42 @@
+{
+  "rules": {
+    ".read":"auth !== null && root.child('admins/' + auth.uid).val() === true",
+    ".write":"auth !== null && root.child('admins/' + auth.uid).val() === true",
+    "productInfos": {
+      ".read": "auth !== null",
+      "$productId": {
+        "Category": {
+          ".write": "auth !== null"
+        }
+      }
+    },
+    "mail": {
+      ".read": "auth !== null"
+    },
+    "userInfos": {
+      "$userId": {
+        ".write": "auth.uid === $userId",
+        ".read": "auth.uid === $userId"
+      }
+    },
+    "defaults": {
+      "$userId": {
+        ".write": "auth.uid === $userId",
+        ".read": "auth.uid === $userId"
+      }
+    },
+    "favorites": {
+      "$userId": {
+        ".write": "auth.uid === $userId",
+        ".read": "auth.uid === $userId"
+      }
+    },
+    "orders": {
+      "$userId": {
+        ".write": "auth.uid === $userId",
+        ".read": "auth.uid === $userId",
+        ".indexOn": "value"
+      }
+    }
+  }
+}

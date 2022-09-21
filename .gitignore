@@ -1,0 +1,13 @@
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+./src/routes/api/sendmail/wisag-outpost-order-system-firebase-adminsdk-qtfky-be8ff1ed6b.json
+
+# Local Netlify folder
+.netlify
+.vercel
